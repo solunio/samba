@@ -1,0 +1,5 @@
+FROM docker.solunio.com/demo/samba:dperson-latest
+
+COPY samba_patched.sh /usr/bin/
+
+ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/samba_patched.sh"]
